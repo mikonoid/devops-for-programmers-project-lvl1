@@ -3,9 +3,8 @@ services:
   app:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.prod
     command: "npm test"
     ports:
       - "8080:8080"
-    volumes:
-    - ./:/app
+
