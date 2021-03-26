@@ -3,4 +3,4 @@
 
 ### Badge 
 
-![Status workflow](https://github.com/mikonoid/devops-for-programmers-project-lvl1/actions/workflows/push.yml/badge.svg)
+![Status workflow](https://github.com/mikonoid/devops-for-programmers-project-lvl1/actions/workflows/push.yml/badge.svg)](https://github.com/mikonoid/devops-for-programmers-project-lvl1/actions/workflows/push.yml)
