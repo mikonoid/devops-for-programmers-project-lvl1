@@ -1,7 +1,7 @@
 version: "2.4"
 services:
   app:
-    image: "mk51/app-devops:cached"
+    image: "***/app-devops:cached"
     command: "npm test"
     ports:
       - "8080:8080"
