@@ -1,7 +1,9 @@
 version: "2.4"
 services:
   app:
-    image: "***/app-devops:cached"
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
     command: "npm test"
     ports:
       - "8080:8080"
