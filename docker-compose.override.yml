@@ -5,7 +5,7 @@ services:
     ports:
       - "8080:8080"
     volumes:
-    - ./:/app
+       - ./:/app
     environment:
       - NODOS_HOST=0.0.0.0
     depends_on:
@@ -20,6 +20,8 @@ services:
       - "./services/caddy/Caddyfile:/etc/Caddyfile"
       - caddy_data:/data
       - caddy_config:/config
+    restart:
+      - always
     depends_on:
       - app
 
