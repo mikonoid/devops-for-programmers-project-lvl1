@@ -20,8 +20,6 @@ services:
       - "./services/caddy/Caddyfile:/etc/Caddyfile"
       - caddy_data:/data
       - caddy_config:/config
-    restart:
-      - always
     depends_on:
       - app
 
