@@ -40,12 +40,15 @@ jobs:
 
       - name: Check
         run: |
-          docker-compose --file docker-compose.yml up --build --abort-on-container-exit
+          docker pull ${{ env.APP_IMAGE_NAME }}:cached \
+          && make up \
+          && docker-compose ps \
+          && make test-web
       - name: Push
         uses: docker/build-push-action@v2
         with:
           context: .
-          file: Dockerfile.prod
+          file: Dockerfile.production
           cache-from: type=registry,ref=${{ env.APP_IMAGE_NAME }}:cached
           push: true
           tags: ${{ env.APP_IMAGE_NAME }}:latest
