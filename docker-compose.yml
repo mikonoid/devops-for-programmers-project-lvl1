@@ -1,8 +1,22 @@
+
 version: '3'
 services:
+  db:
+    image: postgres:12-alpine
+    environment:
+      POSTGRES_USERNAME: "$NODOS_DB_USERNAME"
+      POSTGRES_PASSWORD: "$NODOS_DB_PASSWORD"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
   app:
-    build: .
-    volumes: 
-      - $PWD/app
-    command: npm test
-  
+    build:
+      context: .
+      dockerfile: Dockerfile.production
+    command: make test lint
+    volumes:
+      - ~/.bash_history:/root/.bash_history
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
