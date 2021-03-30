@@ -12,19 +12,15 @@ services:
       - db
 
   caddy:
-    image: caddy:2.3.0
+    image: caddy:2.3.0-alpine
     ports:
-      - "443:443"
-      - "80:80"
-    volumes:
-      - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
-      - caddy_data:/data
-      - caddy_config:/config
+      - 80:80
+      - 443:443
     depends_on:
       - app
+    volumes:
+      - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
 
 volumes:
-  caddy_data:
-  caddy_config:
   pgdata:
 
