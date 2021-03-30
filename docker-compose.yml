@@ -4,7 +4,7 @@ services:
     build: .
     depends_on:
       - db 
-    entrypoint: "./entrypoint.sh db npm start"
+    command: npm start
   db:
     image: postgres:12.6-alpine
     restart: always
