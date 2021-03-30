@@ -15,4 +15,4 @@ services:
     depends_on:
       - app
     volumes:
-      - $PWD/services/caddy/Caddyfile:/etc/Caddyfile
+      - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
