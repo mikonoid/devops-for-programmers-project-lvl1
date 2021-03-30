@@ -1,14 +1,11 @@
 version: '3'
 services:
   app:
-    command: npm start
+    image: mk51/devops-app:cached
     ports:
       - "8080:8080"
-    volumes:
-       - $PWD:/app
     environment:
       - NODOS_HOST=0.0.0.0
-
 
   caddy:
     image: caddy:2.3.0-alpine

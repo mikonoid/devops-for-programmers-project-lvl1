@@ -1,5 +1,5 @@
 DOCKER_IMAGES_TAG?=latest
-DOCKER_REGISTRY_URL?=mk51/devops-for-programmers-project-lvl1
+DOCKER_REGISTRY_URL?=mk51/devops-app
 
 test-web:
 	bash -c "for i in {1..9}; do sleep 1; curl -k https://localhost && exit 0; done; exit 1"
