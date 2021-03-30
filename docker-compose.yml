@@ -2,11 +2,5 @@ version: '3'
 services:
   app:
     build: .
-    depends_on:
-      - db 
-    command: npm start
-  db:
-    image: postgres:12.6-alpine
-    restart: always
-    environment:
-      - POSTGRES_PASSWORD=postgres
+    command: npm test
+  

@@ -6,6 +6,14 @@ services:
       - "8080:8080"
     environment:
       - NODOS_HOST=0.0.0.0
+    depends_on:
+      - db 
+
+  db:
+    image: postgres:12.6-alpine
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=postgres
 
   caddy:
     image: caddy:2.3.0-alpine
