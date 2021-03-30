@@ -1,7 +1,12 @@
-FROM node:14.6.0
+FROM node:14.6
+WORKDIR /app 
 
-WORKDIR /app
+# Важно для кеширования слоев
+COPY package.json package.json
+COPY package-lock.json package-lock.json
 
-RUN npm install --global @nodosjs/cli@0.0.55
+RUN npm install
 
-CMD ["nodos server -h 0.0.0.0"]
+COPY . .
+
+CMD npm start
