@@ -9,7 +9,7 @@ services:
     environment:
       - NODOS_HOST=0.0.0.0
     depends_on:
-      - postgres
+      - db
 
   caddy:
     image: caddy:2.3.0
@@ -17,13 +17,13 @@ services:
       - "443:443"
       - "80:80"
     volumes:
-      - "./services/caddy/Caddyfile:/etc/Caddyfile"
+      - "$PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile"
       - caddy_data:/data
       - caddy_config:/config
     depends_on:
       - app
 
-  postgres:
+  db:
     image: postgres:12-alpine
     volumes:
       - pgdata:/var/lib/postgresql/data
