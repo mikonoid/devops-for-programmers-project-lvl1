@@ -17,16 +17,11 @@ services:
       - "443:443"
       - "80:80"
     volumes:
-      - "$PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile"
+      - $PWD/services/caddy/Caddyfile:/etc/caddy/Caddyfile
       - caddy_data:/data
       - caddy_config:/config
     depends_on:
       - app
-
-  db:
-    image: postgres:12-alpine
-    volumes:
-      - pgdata:/var/lib/postgresql/data
 
 volumes:
   caddy_data:
