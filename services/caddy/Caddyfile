@@ -1,4 +1,4 @@
-localhost, 127.0.0.1 {
+localhost {
   log {
     format single_field common_log
   }
