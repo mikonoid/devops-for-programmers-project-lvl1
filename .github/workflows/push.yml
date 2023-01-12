@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
+    BRANCH:
+        description: 'Branch to use'
+        required: true
+        default: 'develop'
+        type: choice
 
 env:
   APP_IMAGE_NAME: mk51/devops-app
