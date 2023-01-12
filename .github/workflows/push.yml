@@ -10,7 +10,7 @@ on:
       - main
       - 'develop'
   workflow_dispatch:
-    REF:
+    PR:
         description: 'Branch to use'
         required: true
         default: 'develop'
