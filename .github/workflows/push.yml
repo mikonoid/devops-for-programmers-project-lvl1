@@ -20,6 +20,12 @@ env:
   DOCKER_BUILDKIT: 1
 
 jobs:
+  test_deploy:
+  if: ${{ github.event.issue.pull_request && contains(github.event.comment.body, '/deploy') }}
+    - name: Check deploy
+      run: |
+          echo "deploy is coming"
+    
   build:
     runs-on: ubuntu-latest
     steps:
