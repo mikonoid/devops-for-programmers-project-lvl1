@@ -8,9 +8,9 @@ on:
     # Sequence of patterns matched against refs/heads
     branches:    
       - main
-      - 'develop'
+      - develop
   issue_comment:
-    types: [edited]
+    types: [created, edited, deleted]
 
 env:
   APP_IMAGE_NAME: mk51/devops-app
