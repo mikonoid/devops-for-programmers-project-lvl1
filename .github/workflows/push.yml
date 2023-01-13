@@ -21,7 +21,9 @@ env:
 
 jobs:
   test_deploy:
-    if: ${{ github.event.issue.pull_request && contains(github.event.comment.body, '/deploy') }}
+  if: ${{ github.event.issue.pull_request && contains(github.event.comment.body, '/deploy') }}
+  runs-on: ubuntu-latest
+  steps:
     - name: Check deploy
       run: |
         echo "deploy is coming"
