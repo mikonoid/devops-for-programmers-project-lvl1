@@ -9,12 +9,8 @@ on:
     branches:    
       - main
       - 'develop'
-  workflow_dispatch:
-    PR:
-        description: 'Branch to use'
-        required: true
-        default: 'develop'
-        type: choice
+  issue_comment:
+    types: [edited]
 
 env:
   APP_IMAGE_NAME: mk51/devops-app
